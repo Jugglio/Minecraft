@@ -4,11 +4,13 @@
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Software License][ico-license]](LICENSE.md)
 
-Description. Yes, this will be here someday.
+This is a simple package providing you with all the tools to quickstart development on that Minecraft site
+you've been craving. Retrieve UUIDs based on usernames or the other way around with a simple and human-readable
+API.
 
 ## Install
 
-Via Composer
+Via [composer](http://getcomposer.org):
 
 ```bash
 $ composer require juggl/minecraft
@@ -17,16 +19,31 @@ $ composer require juggl/minecraft
 ## Usage
 
 ```php
-Minecraft::getUuidFromName($username); // returns UUID (without dashes)
+// Retrieves a UUID (without dashes) based on the username provided.
+Minecraft::getUuidFromName($username);
+
+// Supply an optional UNIX timestamp to get the UUID of the user who owned that name at that time.
+Minecraft::getUuidFromName($username, time() - (365 * 24 * 60 * 60));
+
+// Get array of names the user has played as.
+Minecraft::getNameHistory($uuid);
+
+// Extract current username from UUID provided.
+Minecraft::getNameFromUuid($uuid);
+
+// Get array of objects with info about each user (username & UUID).
+Minecraft::getUuidsFromNames(['Notch', 'jeb_', 'Dinnerbone']);
 ```
 
-## Change log
+## Rate limiting
 
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+Mojang has somec rate limiting in place so you are expected to cache the results! everything in this
+package, the limit is **600 requests every 10 minutes**. Keep in mind Mojang might change this at any
+time.
 
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+## Credits
+This is simply a wrapper around [Mojang](https://mojang.com)'s API, beautifully (yet unofficially)
+documented at http://wiki.vg/Mojang_API.
 
 ## License
 

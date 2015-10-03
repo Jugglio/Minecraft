@@ -37,7 +37,7 @@ Once that's done, you can add the `MinecraftServiceProvider` to your
 ## Usage
 
 ```php
-// Retrieves a UUID (without dashes) based on the username provided.
+// Retrieve UUID (without dashes) based on the username provided.
 Minecraft::getUuidFromName($username);
 
 // Supply an optional UNIX timestamp to get the UUID of the user who owned that

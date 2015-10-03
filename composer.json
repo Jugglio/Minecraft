@@ -1,12 +1,12 @@
 {
-    "name": "svenluijten/minecraft",
+    "name": "juggl/minecraft",
     "description": "Laravel wrapper for Mojang's Minecraft API",
     "keywords": [
         "minecraft",
         "mojang",
         "api"
     ],
-    "homepage": "https://github.com/svenluijten/Minecraft",
+    "homepage": "https://github.com/Jugglio/Minecraft",
     "license": "MIT",
     "authors": [
         {

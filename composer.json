@@ -1,0 +1,45 @@
+{
+    "name": "svenluijten/minecraft",
+    "description": "Laravel wrapper for Mojang's Minecraft API",
+    "keywords": [
+        "minecraft",
+        "mojang",
+        "api"
+    ],
+    "homepage": "https://github.com/svenluijten/Minecraft",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sven Luijten",
+            "email": "svenluijten@outlook.com",
+            "homepage": "http://svenluijten.com"
+        }
+    ],
+    "require": {
+        "illuminate/support": "~5.1",
+        "php" : ">=5.3.0",
+        "ext-curl" : "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "4.*",
+        "scrutinizer/ocular": "~1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Juggl\\Minecraft\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Juggl\\Minecraft\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}

@@ -34,8 +34,8 @@ class Minecraft
     /**
      * Get all names the player has ever played as.
      *
-     * @param  string $uuid UUID of the player.
-     * @return array        All names player has played as.
+     * @param  string $uuid UUID of the player
+     * @return array        All names player has played as
      */
     public function getNameHistory($uuid)
     {
@@ -54,9 +54,10 @@ class Minecraft
     }
 
     /**
-     * [getNameFromUuid description]
-     * @param  [type] $uuid [description]
-     * @return [type]       [description]
+     * Extract current username from UUID provided.
+     *
+     * @param  string $uuid UUID of the player
+     * @return string       Current username
      */
     public function getNameFromUuid($uuid)
     {

@@ -56,8 +56,8 @@ Minecraft::getUuidsFromNames(['Notch', 'jeb_', 'Dinnerbone']);
 
 ## Rate limiting
 
-Mojang has somec rate limiting in place so you are expected to cache the
-results! everything in this package, the limit is **600 requests every 10
+Mojang has some rate limiting in place so you are expected to cache the
+results. For everything in this package, the limit is **600 requests every 10
 minutes**. Keep in mind Mojang might change this at any time.
 
 ## Credits

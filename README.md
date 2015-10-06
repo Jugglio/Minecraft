@@ -17,42 +17,58 @@ $ composer require juggl/minecraft
 ```
 
 Once that's done, you can add the `MinecraftServiceProvider` to your
-`providers` array, and the `Minecraft` alias to the `aliases` array in
-`/config/app.php`:
+`providers` array:
 
 ```php
+// config/app.php
 'providers' => [
     ...
     Juggl\Minecraft\MinecraftServiceProvider::class,
+    ...
 ];
 ```
 
+You may also add the `Minecraft` facade to the `aliases` array to use the
+`Minecraft` facade:
+
 ```php
+// config/app.php
 'aliases' => [
     ...
     'Minecraft' => Juggl\Minecraft\Facades\Minecraft::class,
+    ...
 ];
 ```
 
 ## Usage
 
 ```php
+$mc = new Juggl\Minecraft\Minecraft;
+
 // Retrieve UUID (without dashes) based on the username provided.
-Minecraft::getUuidFromName($username);
+$mc->getUuidFromName($username);
 
 // Supply an optional UNIX timestamp to get the UUID of the user who owned that
 // name at that time.
-Minecraft::getUuidFromName($username, time() - (365 * 24 * 60 * 60));
+$mc->getUuidFromName($username, time() - (365 * 24 * 60 * 60));
 
 // Get array of names the user has played as.
-Minecraft::getNameHistory($uuid);
+$mc->getNameHistory($uuid);
 
 // Extract current username from UUID provided.
-Minecraft::getNameFromUuid($uuid);
+$mc->getNameFromUuid($uuid);
 
 // Get array of objects with info about each user (username & UUID).
-Minecraft::getUuidsFromNames(['Notch', 'jeb_', 'Dinnerbone']);
+$mc->getUuidsFromNames(['Notch', 'jeb_', 'Dinnerbone']);
 ```
+
+If you specified the alias in `config/app.php`, you can use the facade:
+
+```php
+Minecraft::getUuidFromName($username);
+```
+
+Of course, all other methods can also be accessed this way.
 
 ## Rate limiting
 
@@ -66,7 +82,7 @@ This is simply a wrapper around [Mojang](https://mojang.com)'s API, beautifully
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+The MIT License (MIT). Please see the [license file](LICENSE.md) for more information.
 
 [ico-version]: https://img.shields.io/packagist/v/juggl/minecraft.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-green.svg?style=flat-square

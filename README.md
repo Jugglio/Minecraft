@@ -1,4 +1,4 @@
-# Laravel Minecraft
+# Minecraft API
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
@@ -16,7 +16,7 @@ Via [composer](http://getcomposer.org):
 $ composer require juggl/minecraft
 ```
 
-Once that's done, you can add the `MinecraftServiceProvider` to your
+If you're using the [Laravel](http://laravel.com) framework, you can add the `MinecraftServiceProvider` to your
 `providers` array:
 
 ```php
@@ -28,8 +28,7 @@ Once that's done, you can add the `MinecraftServiceProvider` to your
 ];
 ```
 
-You may also add the `Minecraft` facade to the `aliases` array to use the
-`Minecraft` facade:
+You may also add the `Minecraft` facade to the `aliases` array to use the facade:
 
 ```php
 // config/app.php
@@ -43,23 +42,23 @@ You may also add the `Minecraft` facade to the `aliases` array to use the
 ## Usage
 
 ```php
-$mc = new Juggl\Minecraft\Minecraft;
+$minecraft = new Juggl\Minecraft\Minecraft;
 
 // Retrieve UUID (without dashes) based on the username provided.
-$mc->getUuidFromName($username);
+$minecraft->getUuidFromName($username);
 
 // Supply an optional UNIX timestamp to get the UUID of the user who owned that
-// name at that time.
-$mc->getUuidFromName($username, time() - (365 * 24 * 60 * 60));
+// username at the time.
+$minecraft->getUuidFromName($username, time() - (365 * 24 * 60 * 60));
 
 // Get array of names the user has played as.
-$mc->getNameHistory($uuid);
+$minecraft->getNameHistory($uuid);
 
 // Extract current username from UUID provided.
-$mc->getNameFromUuid($uuid);
+$minecraft->getNameFromUuid($uuid);
 
 // Get array of objects with info about each user (username & UUID).
-$mc->getUuidsFromNames(['Notch', 'jeb_', 'Dinnerbone']);
+$minecraft->getUuidsFromNames(['Notch', 'jeb_', 'Dinnerbone']);
 ```
 
 If you specified the alias in `config/app.php`, you can use the facade:
@@ -82,7 +81,8 @@ This is simply a wrapper around [Mojang](https://mojang.com)'s API, beautifully
 
 ## License
 
-The MIT License (MIT). Please see the [license file](LICENSE.md) for more information.
+`Juggl\Minecraft` is licenced under the MIT License (MIT). Please see the
+[license file](LICENSE.md) for more information.
 
 [ico-version]: https://img.shields.io/packagist/v/juggl/minecraft.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-green.svg?style=flat-square

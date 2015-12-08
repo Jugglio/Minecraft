@@ -1,6 +1,6 @@
 {
     "name": "juggl/minecraft",
-    "description": "Laravel wrapper for Mojang's Minecraft API",
+    "description": "A fluent wrapper around Minecraft's API.",
     "keywords": [
         "minecraft",
         "mojang",
@@ -20,26 +20,9 @@
         "php" : ">=5.3.0",
         "ext-curl" : "*"
     },
-    "require-dev": {
-        "phpunit/phpunit" : "4.*",
-        "scrutinizer/ocular": "~1.1"
-    },
     "autoload": {
         "psr-4": {
             "Juggl\\Minecraft\\": "src"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Juggl\\Minecraft\\Test\\": "tests"
-        }
-    },
-    "scripts": {
-        "test": "phpunit"
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0-dev"
         }
     }
 }

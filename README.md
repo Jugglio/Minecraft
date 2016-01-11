@@ -1,3 +1,5 @@
+> THIS VERSION IS DEPRECATED! PLEASE USE [sven/minecraft-php](https://github.com/svenluijten/minecraft-php) INSTEAD. 
+
 # Minecraft API
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
